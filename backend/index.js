@@ -11,9 +11,11 @@ connectToMongoDb();
 expressApp.use(express.static("./public/"));
 expressApp.use(json()); // It is done to make our application to accept JSON data.
 expressApp.use(cors());
+expressApp.use(express.urlencoded({ extended: true }));
 
 expressApp.use("/blogs", blogRouter);
 expressApp.use("/files", fileRouter);
+
 
 expressApp.listen(port, () => {
   console.log("app is listening at port 8000");
