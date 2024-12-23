@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+// import { Input } from "@/components/ui/input"
+// import { Label } from "@/components/ui/label"
 import Link from 'next/link'
 
 const login = () => {
@@ -11,14 +11,14 @@ const login = () => {
 
         <h1 className='text-center mb-4 font-semibold text-2xl'> Log in</h1>
         <form action="" className='space-y-3'>
-          <div className="grid w-full max-w-sm items-center gap-1.5">
+          {/* <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label htmlFor="username">Username</Label>
             <Input type="username" id="username" placeholder="Username"  />
           </div>  
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label htmlFor="email">Email</Label>
             <Input type="email" id="email" placeholder="Email" />
-          </div>
+          </div> */}
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Button>Sign up</Button>
           </div>

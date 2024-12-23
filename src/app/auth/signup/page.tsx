@@ -24,7 +24,7 @@ const signup = () => {
             <Input type="password" id="password" placeholder="Password" />
           </div>
           <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Button>Sign up</Button>
+            <Button className='bg-blue-500'>Sign up</Button>
           </div>
           <div className="flex w-full max-w-sm items-center gap-1.5">
             <p>Do you have an account?</p>

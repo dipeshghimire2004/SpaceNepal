@@ -2,7 +2,7 @@
 import HomeSection from "./components/HomeSection";
 import Posts from "./posts/page";
 
- function  Home() {
+ const Home:React.FC=()=> {
 
 
   return (
