@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
 import BlogCard from "../components/BlogCard";
 import { fetchBlogs } from "../redux/blogSlice";
@@ -11,7 +11,7 @@ interface BlogPostsProps {
 }
 
 const Posts: React.FC<BlogPostsProps> = ({ limit }) => {
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+  // const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
   const [currentPage, setCurrentPage] = useState<number>(1);
   const postsPerPage = 4;

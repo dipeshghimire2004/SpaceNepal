@@ -1,3 +1,4 @@
+// import { transform } from "next/dist/build/swc/generated-native";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -9,6 +10,15 @@ export default {
   ],
   theme: {
   	extend: {
+		keyframes:{
+			slide:{
+				'0%':{transform:'translateX(0)'},
+				'100%': {transform:'translateX(-100%)'},
+			},
+		},
+		animation:{
+			slide:'slide 15s linear infinite',
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -49,6 +59,16 @@ export default {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
+  			},
+  			sidebar: {
+  				DEFAULT: 'hsl(var(--sidebar-background))',
+  				foreground: 'hsl(var(--sidebar-foreground))',
+  				primary: 'hsl(var(--sidebar-primary))',
+  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+  				accent: 'hsl(var(--sidebar-accent))',
+  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+  				border: 'hsl(var(--sidebar-border))',
+  				ring: 'hsl(var(--sidebar-ring))'
   			}
   		},
   		borderRadius: {
@@ -58,5 +78,14 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+//   plugins: [require("tailwindcss-animate")],
+plugins:[
+	function({addUtilities}:{addUtilities: any}){
+		addUtilities({
+			".animation-paused":{
+				"animation-play-state":"paused",
+			}
+		})
+	}	
+]
 } satisfies Config;

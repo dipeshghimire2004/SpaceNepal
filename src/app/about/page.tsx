@@ -1,7 +1,10 @@
-
 import React from "react";
-import Tech from '../../../public/images/tech.webp'
 import Image from "next/image";
+import web from "../../../public/images/web.jpg";
+import quantum from "../../../public/images/quantum.jpg";
+import ai from "../../../public/images/ai.webp";
+import bgimg from "../../../public/images/bgimg.webp";
+import futuretech from "../../../public/images/futuretech.gif";
 
 const About: React.FC = () => {
   return (
@@ -15,14 +18,26 @@ const About: React.FC = () => {
           Our mission is to make technology accessible to everyone by sharing
           valuable knowledge in an engaging way.
         </p>
-        <div className="mt-8">
-          <Image
-            src={Tech}
-            alt="Tech Concept"
-            className="rounded-lg shadow-lg w-full"
-          />
-        </div>
       </div>
+
+      {/* Scrollable Images */}
+      <div className="overflow-hidden relative mt-20 group">
+  <div className="flex gap-4 animate-slide group-hover:animation-paused">
+    <Image src={web} alt="Web Concept" className="h-72 w-96 border rounded-lg" />
+    <Image src={quantum} alt="Quantum Concept" className="h-72 w-96 border rounded-lg" />
+    <Image src={ai} alt="AI" className="h-72 w-96 border rounded-lg" />
+    <Image src={futuretech} alt="Future Tech" className="h-72 w-96 border rounded-lg" />
+    <Image src={bgimg} alt="Background Image" className="h-72 w-96 border rounded-lg" />
+
+    {/* Duplicate images for smooth looping */}
+    {/* <Image src={web} alt="Web Concept" className="h-72 w-96 border rounded-lg" />
+    <Image src={quantum} alt="Quantum Concept" className="h-72 w-96 border rounded-lg" />
+    <Image src={ai} alt="AI" className="h-72 w-96 border rounded-lg" />
+    <Image src={futuretech} alt="Future Tech" className="h-72 w-96 border rounded-lg" />
+    <Image src={bgimg} alt="Background Image" className="h-72 w-96 border rounded-lg" /> */}
+  </div>
+</div>
+
     </section>
   );
 };
